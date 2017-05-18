@@ -34,6 +34,7 @@ const int ledPin7=8;
 const int ledPin8=9;
 const int ledPin9=10;
 const int ledPin10=11;
+const int fan=12;
 
 // Variables will change:
 //int ledState = HIGH;         // the current state of the output pin
@@ -60,7 +61,7 @@ pinMode(ledPin7,OUTPUT);
 pinMode(ledPin8,OUTPUT);
 pinMode(ledPin9,OUTPUT);
 pinMode(ledPin10,OUTPUT);
-  
+ pinMode(fan,OUTPUT); 
  Serial.begin(9600);
   // set initial LED state
   //digitalWrite(ledPin1, ledState);
@@ -103,6 +104,10 @@ for (int i=0;i<BUTTON_NUM;i++)
         digitalWrite(ledPin10,HIGH);
         delay(500);
         winnerLights();
+        //implemented fan turning on for 10 seconds
+        digitalWrite(fan,HIGH);
+        delay(1000);
+        digitalWrite(fan,LOW);
         count=0;
         turnOff();
         }

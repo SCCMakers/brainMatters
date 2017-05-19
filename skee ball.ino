@@ -34,8 +34,8 @@ const int ledPin7=8;
 const int ledPin8=9;
 const int ledPin9=10;
 const int ledPin10=11;
-const int fan=12;
-
+const int fan=13;
+const int fantime=15000;
 // Variables will change:
 //int ledState = HIGH;         // the current state of the output pin
 
@@ -106,7 +106,7 @@ for (int i=0;i<BUTTON_NUM;i++)
         winnerLights();
         //implemented fan turning on for 10 seconds
         digitalWrite(fan,HIGH);
-        delay(1000);
+        delay(fantime);
         digitalWrite(fan,LOW);
         count=0;
         turnOff();
